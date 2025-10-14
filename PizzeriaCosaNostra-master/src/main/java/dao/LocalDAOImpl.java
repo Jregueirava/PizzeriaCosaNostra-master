@@ -2,9 +2,7 @@ package dao;
 
 import model.Local;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -59,11 +57,38 @@ public class LocalDAOImpl implements LocalDAO{
         //Búsqueda del local por id y si existe/no existe actulizar/crear
         boolean encontrado = false;
 
-        /*TODO*/
         for(int i = 0; i < locales.size(); i++){
-
+            if(locales.get(i).getId().equals(local.getId())){
+                locales.set(i,local);
+                encontrado = true;
+                break;
+            }
+        }
+        //Si no lo encuentra
+        if(!encontrado){
+            locales.add(local);
         }
 
-
+        //Reescripcion del csv
+        try(BufferedWriter writer = new BufferedWriter(new FileWriter(path))){
+            //Cabecera
+            writer.write("ID, Nmbre, Dirección, CódigoPostal, Población, Provincia, Teléfono, m2");
+            writer.newLine();
+            //Escritura de los locales
+            for(Local 1 : locales){
+                String linea = String.format("%s, %s, %s, %s, %s, %s, %s, %d",
+                        1.getId(),
+                        1.getNombre(),
+                        1.getDireccion(),
+                        1.getCodigoPostal(),
+                        1.getPoblacion(),
+                        1.getProvicincia(),
+                        1.getTelefono(),
+                        1.getM2()
+                        );
+                writer.write(linea);
+                writer.newLine();
+            }
+        }
     }
 }
