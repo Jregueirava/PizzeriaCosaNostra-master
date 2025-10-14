@@ -72,19 +72,19 @@ public class LocalDAOImpl implements LocalDAO{
         //Reescripcion del csv
         try(BufferedWriter writer = new BufferedWriter(new FileWriter(path))){
             //Cabecera
-            writer.write("ID, Nmbre, Dirección, CódigoPostal, Población, Provincia, Teléfono, m2");
+            writer.write("id,nombre,direccion,codigoPostal,poblacion,provincia,telefono,m2");
             writer.newLine();
             //Escritura de los locales
-            for(Local 1 : locales){
+            for(Local local1 : locales){
                 String linea = String.format("%s, %s, %s, %s, %s, %s, %s, %d",
-                        1.getId(),
-                        1.getNombre(),
-                        1.getDireccion(),
-                        1.getCodigoPostal(),
-                        1.getPoblacion(),
-                        1.getProvicincia(),
-                        1.getTelefono(),
-                        1.getM2()
+                        local1.getId(),
+                        local1.getNombre(),
+                        local1.getDireccion(),
+                        local1.getCodigoPostal(),
+                        local1.getPoblacion(),
+                        local1.getProvincia(),
+                        local1.getTelefono(),
+                        local1.getM2()
                         );
                 writer.write(linea);
                 writer.newLine();
