@@ -2,6 +2,7 @@ import controlador.IngredienteController;
 import controlador.LandingPageController;
 import controlador.LocalController;
 import controlador.PizzaController;
+import dao.*;
 import service.*;
 import vista.*;
 
@@ -31,13 +32,22 @@ public class App {
                     //Este fichero hay que generarlo
                     String pathPizzaJSON = "src/main/resources/Pizzas.json";
                     //DAOS TO-DO
-
+                    LandingPageDAO landingDAO = new LandingPageDAOImpl(pathProp);
+                    LocalDAO localDAO = new LocalDAOImpl(pathLocal);
+                    IngredienteDAO ingredienteDAO = new IngredienteDAOImpl(pathIngedientes);
+                    PizzaDAO pizzaDAOXML = new PizzaDAOXMLImpl(pathPizza);
+                    PizzaDAO pizzaDAOJSON = new PizzaDAOJSONImpl(pathPizzaJSON);
                     //Servicios TO-DO
-                    LandingPageService landingService = new LandingPageServiceMock();
-                    LocalService localService = new LocalServiceMock();
-                    PizzaService pizzaService = new PizzaServiceMock();
-                    IngredienteService ingredienteService = new IngredienteServiceMock();
-                    PizzaConversionService conversionService = new PizzaConversionServiceMock();
+                    //LandingPageService landingService = new LandingPageServiceMock();
+                    LandingPageService landingService = new LandingPageServiceImpl(landingDAO);
+                    //LocalService localService = new LocalServiceMock();
+                    LocalService localService = new LocalServiceImpl(localDAO);
+                    //PizzaService pizzaService = new PizzaServiceMock();
+                    PizzaService pizzaService = new PizzaServiceImpl(pizzaDAOXML);
+                    //IngredienteService ingredienteService = new IngredienteServiceMock();
+                    IngredienteService ingredienteService = new IngredienteServiceImpl(ingredienteDAO);
+                    //PizzaConversionService conversionService = new PizzaConversionServiceMock();
+                    PizzaConversionService conversionService = new PizzaConversionServiceImpl(pizzaDAOXML, pizzaDAOJSON);
 
                     /*===============FIN ZONA DE CÓDIGO MODIFICABLE===============*/
                     // Inicializar vistas

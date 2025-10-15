@@ -23,5 +23,11 @@
         solo cuando ejecutes las pruebas.-->
         <scope>test</scope>
     </dependency>
+        <!-- JSON Gson-->
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.10.1</version>
+        </dependency>
     </dependencies>
 </project>

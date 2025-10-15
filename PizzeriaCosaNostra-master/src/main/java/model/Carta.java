@@ -1,10 +1,14 @@
 package model;
 
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-
+@XmlRootElement(name="Carta")
+@XmlType(propOrder={})
 public class Carta implements Serializable {
     private static final long serialVersionUID = 1L;
 
@@ -12,6 +16,7 @@ public class Carta implements Serializable {
 
     public Carta() { }
 
+    @XmlElement(name= "Pizza")
     public List<Pizza> getPizzas() {
         return pizzas;
     }
