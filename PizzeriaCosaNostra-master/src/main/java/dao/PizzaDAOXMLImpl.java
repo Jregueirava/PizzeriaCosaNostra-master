@@ -13,15 +13,15 @@ import java.util.List;
 
 public class PizzaDAOXMLImpl implements PizzaDAO {
 
-    private String path;
+    private String pathPizza;
 
     public PizzaDAOXMLImpl(String path) {
-        this.path = path;
+        this.pathPizza = pathPizza;
     }
 
     //Leer  carta Xml
     private Carta leerXML() throws JAXBException{
-        File archivo = new File(path);
+        File archivo = new File(pathPizza);
 
         //No existe, carta vacia
         if(!archivo.exists()){
@@ -54,7 +54,7 @@ public class PizzaDAOXMLImpl implements PizzaDAO {
         marshaller.setProperty(Marshaller.JAXB_ENCODING, "UTF-8");
 
         //Escribe la carta en objeto en el XML
-        marshaller.marshal(carta, new File(path));
+        marshaller.marshal(carta, new File(pathPizza));
     }
 
 

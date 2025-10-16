@@ -8,10 +8,10 @@ import java.util.List;
 
 public class LocalDAOImpl implements LocalDAO{
 
-     private String path;
+     private String pathLocal;
 
-    public LocalDAOImpl(String path) {
-        this.path = path;
+    public LocalDAOImpl(String pathLocal) {
+        this.pathLocal = pathLocal;
     }
 
     @Override
@@ -20,7 +20,7 @@ public class LocalDAOImpl implements LocalDAO{
 
         //Leer el csv con BufferedReader
 
-        try(BufferedReader reader = new BufferedReader(new FileReader(path))){
+        try(BufferedReader reader = new BufferedReader(new FileReader(pathLocal))){
             //Leer la cabecera
             String linea = reader.readLine();
             //Leer el resto
@@ -70,7 +70,7 @@ public class LocalDAOImpl implements LocalDAO{
         }
 
         //Reescripcion del csv
-        try(BufferedWriter writer = new BufferedWriter(new FileWriter(path))){
+        try(BufferedWriter writer = new BufferedWriter(new FileWriter(pathLocal))){
             //Cabecera
             writer.write("id,nombre,direccion,codigoPostal,poblacion,provincia,telefono,m2");
             writer.newLine();
