@@ -18,7 +18,7 @@ public class PizzaDAOJSONImpl  implements PizzaDAO{
     private String pathPizzaJson;
     private Gson gson;
 
-    public PizzaDAOJSONImpl(String pathPizzaJson, Gson gson) {
+    public PizzaDAOJSONImpl(String pathPizzaJson) {
         this.pathPizzaJson = pathPizzaJson;
         //Config Gson con el formato legible
         this.gson = new GsonBuilder().setPrettyPrinting().create();
