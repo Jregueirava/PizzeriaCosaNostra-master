@@ -8,7 +8,7 @@ import java.util.List;
 
 public class LocalDAOImpl implements LocalDAO{
 
-     private String pathLocal;
+     private String  pathLocal = "src/main/resources/locales.csv";
 
     public LocalDAOImpl(String pathLocal) {
         this.pathLocal = pathLocal;

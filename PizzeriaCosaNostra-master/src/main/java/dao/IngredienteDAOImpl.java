@@ -8,7 +8,7 @@ import java.util.List;
 
 public class IngredienteDAOImpl implements IngredienteDAO {
 
-    private String pathIngredientes;
+    private String pathIngredientes = "src/main/resources/ingredientes.dat";
 
     public IngredienteDAOImpl(String path) {
         this.pathIngredientes = pathIngredientes;

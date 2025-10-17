@@ -13,7 +13,7 @@ import java.util.List;
 
 public class PizzaDAOXMLImpl implements PizzaDAO {
 
-    private String pathPizza;
+    private String pathPizza = "src/main/resources/Carta.xml";
 
     public PizzaDAOXMLImpl(String path) {
         this.pathPizza = pathPizza;

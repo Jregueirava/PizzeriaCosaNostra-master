@@ -28,13 +28,13 @@ public class App {
                     String pathProp = "src/main/resources/config.properties";
                     String pathLocal = "src/main/resources/locales.csv";
                     String pathPizza = "src/main/resources/Carta.xml";
-                    String pathIngedientes = "src/main/resources/ingredientes.dat";
+                    String pathIngredientes = "src/main/resources/ingredientes.dat";
                     //Este fichero hay que generarlo
                     String pathPizzaJSON = "src/main/resources/Pizzas.json";
                     //DAOS TO-DO
                     LandingPageDAO landingDAO = new LandingPageDAOImpl(pathProp);
                     LocalDAO localDAO = new LocalDAOImpl(pathLocal);
-                    IngredienteDAO ingredienteDAO = new IngredienteDAOImpl(pathIngedientes);
+                    IngredienteDAO ingredienteDAO = new IngredienteDAOImpl(pathIngredientes);
                     PizzaDAO pizzaDAOXML = new PizzaDAOXMLImpl(pathPizza);
                     PizzaDAO pizzaDAOJSON = new PizzaDAOJSONImpl(pathPizzaJSON);
                     //Servicios TO-DO

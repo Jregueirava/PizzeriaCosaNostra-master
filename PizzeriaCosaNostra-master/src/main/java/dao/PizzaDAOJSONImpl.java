@@ -15,11 +15,11 @@ import java.util.List;
 public class PizzaDAOJSONImpl  implements PizzaDAO{
 
 
-    private String pathPizzaJson;
+    private String pathPizzaJSON = "src/main/resources/Pizzas.json";
     private Gson gson;
 
     public PizzaDAOJSONImpl(String pathPizzaJson) {
-        this.pathPizzaJson = pathPizzaJson;
+        this.pathPizzaJSON = pathPizzaJson;
         //Config Gson con el formato legible
         this.gson = new GsonBuilder().setPrettyPrinting().create();
     }
@@ -38,7 +38,7 @@ public class PizzaDAOJSONImpl  implements PizzaDAO{
 
     @Override
     public void exportarPizzasJSON(List<Pizza> pizzas) throws IOException {
-        Writer writer = new FileWriter(pathPizzaJson);
+        Writer writer = new FileWriter(pathPizzaJSON);
         //Conversion de la lista de pizzas a JSON y las escribe
         gson.toJson(pizzas,writer);
         writer.close();
