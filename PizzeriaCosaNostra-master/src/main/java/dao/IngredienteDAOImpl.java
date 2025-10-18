@@ -8,15 +8,15 @@ import java.util.List;
 
 public class IngredienteDAOImpl implements IngredienteDAO {
 
-    private String pathIngredientes = "src/main/resources/ingredientes.dat";
+    private String path;
 
     public IngredienteDAOImpl(String path) {
-        this.pathIngredientes = pathIngredientes;
+        this.path = path;
     }
 
     @Override
     public List<Ingrediente> listarIngredientes() throws IOException, ClassNotFoundException {
-        File archivo = new File(pathIngredientes);
+        File archivo = new File(path);
 
         //Si no existe, la devuelve vacia
 
@@ -26,7 +26,7 @@ public class IngredienteDAOImpl implements IngredienteDAO {
 
         //Lectura lista serializada
 
-        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(pathIngredientes))) {
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(path))) {
             @SuppressWarnings("unchecked")
             List<Ingrediente> ingredientes = (List<Ingrediente>)
                     ois.readObject();
@@ -55,7 +55,7 @@ public class IngredienteDAOImpl implements IngredienteDAO {
         }
 
         //Lista Guardada
-        try(ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(pathIngredientes))){
+        try(ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(path))){
             oos.writeObject(ingredientes);
         }
     }
