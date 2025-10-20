@@ -74,7 +74,8 @@ public class PizzaDAOXMLImpl implements PizzaDAO {
         boolean encontrado = false;
         for(int i = 0; i< pizzas.size(); i++){
             if(pizzas.get(i).getId().equals(pizza.getId())){
-                //pizza.set(i, pizza);
+                //Actualizar
+                pizzas.set(i, pizza);
                 encontrado = true;
                 break;
             }

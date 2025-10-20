@@ -55,11 +55,11 @@ public class IngredienteDAOTest {
 
         //Crear nuevo ingrediente
 
-        //Ingrediente nuevoIngrediente = new Ingrediente("INGTEST", "Ingrediente Test", Arrays.asList( new Alergeno("Gluten"), new Alergeno("Lactosa")));
+        Ingrediente nuevoIngrediente = new Ingrediente("INGTEST", "Ingrediente Test", "ProveedorTest", "NombreProveedorTest", true, true, false, false);
 
 
         //Añadir
-        //dao.actualizarIngrediente(nuevoIngrediente);
+        dao.actualizarIngrediente(nuevoIngrediente);
         //Comprobar
         List<Ingrediente> ingredientes = dao.listarIngredientes();
 
@@ -67,9 +67,17 @@ public class IngredienteDAOTest {
         for(Ingrediente i: ingredientes){
             if(i.getId().equals("INGTEST")){
                 encontrado= true;
+
+                //Comprobacion de los atributos
+                assertEquals("Ingrediente Test", i.getNombre());
+                assertTrue(i.isGluten());
+                assertTrue(i.isLacteos());
+                assertTrue(i.isHuevos());
+                assertFalse(i.isPicante());
                 break;
             }
         }
+        //Si encuentra el nuevo ingrediente
         assertTrue(encontrado);
     }
 

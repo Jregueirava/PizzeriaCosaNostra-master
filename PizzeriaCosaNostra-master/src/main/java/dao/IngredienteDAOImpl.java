@@ -45,17 +45,21 @@ public class IngredienteDAOImpl implements IngredienteDAO {
         boolean encontrado = false;
         for(int i = 0; i< ingredientes.size(); i++){
             if(ingredientes.get(i).getId().equals(ingrediente.getId())){
+                //Actualizacion
+                ingredientes.set(i, ingrediente);
                 encontrado = true;
                 break;
             }
         }
         //Si no se encuentra lo actualiza
         if(!encontrado){
+            //Si no existe lo añade
             ingredientes.add(ingrediente);
         }
 
         //Lista Guardada
         try(ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(rutaArchivo))){
+            //Guardado de la lista entera
             oos.writeObject(ingredientes);
         }
     }
