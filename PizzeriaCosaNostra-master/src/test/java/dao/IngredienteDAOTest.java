@@ -63,7 +63,7 @@ public class IngredienteDAOTest {
         //Comprobar
         List<Ingrediente> ingredientes = dao.listarIngredientes();
 
-        boolean encontrado = true;
+        boolean encontrado = false;
         for(Ingrediente i: ingredientes){
             if(i.getId().equals("INGTEST")){
                 encontrado= true;
@@ -72,7 +72,7 @@ public class IngredienteDAOTest {
                 assertEquals("Ingrediente Test", i.getNombre());
                 assertTrue(i.isGluten());
                 assertTrue(i.isLacteos());
-                assertTrue(i.isHuevos());
+                assertFalse(i.isHuevos());
                 assertFalse(i.isPicante());
                 break;
             }

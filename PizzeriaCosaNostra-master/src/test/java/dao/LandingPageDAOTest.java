@@ -33,7 +33,7 @@ public class LandingPageDAOTest {
     @Test
     void testGetLandingPageContentGL() throws  IOException{
         LandingPageDAO dao = new LandingPageDAOImpl(RUTA);
-        LandingPageContent content = dao.getLandingPageContent("GL");
+        LandingPageContent content = dao.getLandingPageContent("GAL");
 
         assertNotNull(content);
         assertFalse(content.getQuienesSomos().isEmpty());

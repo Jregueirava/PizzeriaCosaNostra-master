@@ -78,5 +78,15 @@
             <Ingrediente>ING007</Ingrediente>
         </Ingredientes>
     </Pizza>
-
+    <Pizza ID="PZZTEST">
+        <Nombre>Pizza Test</Nombre>
+        <Descripcion>Pizza de prueba</Descripcion>
+        <Calorias>800</Calorias>
+        <Precio>9.99</Precio>
+        <TiempoPreparacion>15</TiempoPreparacion>
+        <Ingredientes>
+            <Ingrediente>ING001</Ingrediente>
+            <Ingrediente>ING002</Ingrediente>
+        </Ingredientes>
+    </Pizza>
 </Carta>
