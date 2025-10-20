@@ -8,10 +8,10 @@ import java.util.Properties;
 
 public class LandingPageDAOImpl implements LandingPageDAO {
 
-    private String path;
+    private String rutaArchivo;
 
-    public LandingPageDAOImpl(String path){
-        this.path= path;
+    public LandingPageDAOImpl(String rutaArchivo){
+        this.rutaArchivo = rutaArchivo;
     }
 
 
@@ -24,7 +24,7 @@ public class LandingPageDAOImpl implements LandingPageDAO {
 
         //Cargar el archivo
 
-        try(FileInputStream fis = new FileInputStream(path)){
+        try(FileInputStream fis = new FileInputStream(rutaArchivo)){
           props.load(fis);
         } catch (IOException e) {
             e.printStackTrace();

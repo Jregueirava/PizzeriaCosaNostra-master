@@ -5,6 +5,7 @@ import controlador.PizzaController;
 import dao.*;
 import service.*;
 import vista.*;
+import java.io.File;
 
 import javax.swing.*;
 
@@ -25,12 +26,22 @@ public class App {
             SwingUtilities.invokeLater(() -> {
                 try {
                     /*===============ZONA DE CÓDIGO MODIFICABLE===============*/
-                    String pathProp = "src/main/resources/config.properties";
-                    String pathLocal = "src/main/resources/locales.csv";
-                    String pathPizza = "src/main/resources/Carta.xml";
-                    String pathIngredientes = "src/main/resources/ingredientes.dat";
+
+                    //Para obtener el directorio base del proyecto automaticamente
+                    //String basePath = System.getProperty("user.dir");
+
+                 String basePath =  "C:/Users/jesus/Desktop/AMAD 25-26/PizzeriaCosaNostra-master/PizzeriaCosaNostra-master";
+
+                    String pathProp = basePath + "\\src\\main\\resources\\config.properties";
+                    String pathLocal = basePath + "\\src\\main\\resources\\locales.csv";
+                    String pathPizza =  basePath + "\\src\\main\\resources\\Carta.xml";
+                    String pathIngredientes = basePath + "\\src\\main\\resources\\ingredientes.dat";
+
+
                     //Este fichero hay que generarlo
-                    String pathPizzaJSON = "src/main/resources/Pizzas.json";
+                    String pathPizzaJSON = basePath +"\\src\\main\\resources\\Pizzas.json";
+
+                    //String pathPizzaJSON = "src/main/resources/Pizza.json";
                     //DAOS TO-DO
                     LandingPageDAO landingDAO = new LandingPageDAOImpl(pathProp);
                     LocalDAO localDAO = new LocalDAOImpl(pathLocal);
