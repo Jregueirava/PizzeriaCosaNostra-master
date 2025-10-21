@@ -10,7 +10,8 @@ import java.util.List;
 import static java.util.Arrays.asList;
 import static org.junit.jupiter.api.Assertions.*;
 
-public class IngredienteDAOTest {
+public class
+IngredienteDAOTest {
 
     private final String RUTA = "src/main/resources/ingredientes.dat";
 

@@ -30,7 +30,11 @@ public class App {
                     //Para obtener el directorio base del proyecto automaticamente
                     //String basePath = System.getProperty("user.dir");
 
-                 String basePath =  "C:/Users/jesus/Desktop/AMAD 25-26/PizzeriaCosaNostra-master/PizzeriaCosaNostra-master";
+                    //DIRECCION CLASE
+                    String basePath = "C:/Users/jesus.regueiravazque/Desktop/ACD2025/PizzeriaCosaNostra-master/PizzeriaCosaNostra-master";
+
+                    //DIRECCION CASA
+                 //String basePath =  "C:/Users/jesus/Desktop/AMAD 25-26/PizzeriaCosaNostra-master/PizzeriaCosaNostra-master";
 
                     String pathProp = basePath + "\\src\\main\\resources\\config.properties";
                     String pathLocal = basePath + "\\src\\main\\resources\\locales.csv";

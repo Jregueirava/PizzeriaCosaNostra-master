@@ -81,7 +81,7 @@
     <Pizza ID="PZZTEST">
         <Nombre>Pizza Test</Nombre>
         <Descripcion>Pizza de prueba</Descripcion>
-        <Calorias>800</Calorias>
+        <Calorias>901</Calorias>
         <Precio>9.99</Precio>
         <TiempoPreparacion>15</TiempoPreparacion>
         <Ingredientes>
